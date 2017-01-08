@@ -1,0 +1,41 @@
+<div class='panel-heading'>
+    <h2>{{pageTitle}}</h2>
+</div>
+<div class='panel-body'>
+
+    
+    <div class='row'>
+        <div class='col-md-6'>
+            <a [routerLink]="['CreateCoupon']">Add Coupon</a>
+        </div>
+        <br/>
+    </div>
+    <div class='table-responsive'>
+        <table class='table' *ngIf='Shop'>
+            <thead>
+                <tr>
+
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Expiry Date</th>
+                    <th>Edit</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='#coupon of Shop.coupons'>
+                    <td>{{ coupon.title }}</td>
+                   <img [src]="'data:image/jpg;base64,'+coupon.image" [style.width.px]='imageWidth' [style.margin.px]='imageMargin' />
+                     <td><div [innerHTML]="coupon.description"></div></td>
+                    <!--<td>{{ coupon.description }}</td>-->
+                    <td>{{ coupon.expireddate}}</td>
+                     <td><a [routerLink]="['UpdateCoupon',{sId: Shop._id,cId: coupon._id}]">
+                              Edit
+                            </a></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

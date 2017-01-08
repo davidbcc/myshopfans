@@ -1,0 +1,72 @@
+<div class="container" *ngIf="Shop">
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div *ngIf="Shop">
+                <h1>{{Shop.shopname}}</h1>
+            </div>`
+        </div>
+
+
+        <div class="col-md-9">
+
+            <div class="thumbnail">
+                <img class="img-responsive" [src]="'data:image/jpg;base64,'+Shop.images" alt="{{Shop.shopname}}">
+                <div class="caption-full">
+                    <!--<h4><a href="#">Web Site</a>
+                        </h4>-->
+                    <h4>Phone Number: {{Shop.phone}}
+                    </h4>
+                    <h4>Address: {{Shop.address}}
+                    </h4>
+                    <!--<p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                        <p>Want to make these reviews work? Check out
+                            <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
+                            </strong>over at maxoffsky.com!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>-->
+                    <p>{{Shop.description}}</p>
+
+                </div>
+                <!--
+                    <div class="well" *ngIf="Shop">
+                      
+                    </div>-->
+            </div>
+            <!--<div class="row">
+                <div class="col-md-3">
+                    <form #EmailSubsForm="ngForm">
+                        <font size="2">Enter your email and get these articles right to your inbox.</font>
+                        <input type="text" class="form-control" required placeholder="Email Address: " ng-controller="shopname"><br/>
+                        <button type="submit" class="btn btn-default">Subscribe</button>
+                        <br/>
+                    </form>
+                </div>
+            </div>-->
+
+            <p>Coupons:</p>
+            <div class="thumbnail" *ngFor='#coupon of Shop.coupons'>
+                <img class="img-responsive" [src]="'data:image/jpg;base64,'+coupon.image" alt="{{coupon.title}}" [style.width.px]='imageWidthCoupon'
+                    [style.margin.px]='imageMarginCoupon'>
+                <label>Title:</label>
+                <label>{{coupon.title}}</label><br/>
+                <label>Description:</label>
+                <label>{{coupon.description}}</label><br/>
+                <label>Expiry Date:</label>
+                <label>{{coupon.expireddate}}</label>
+            </div>
+            <!--<modal #emailModal>
+                    <modal-header>
+                        <h4 class="modal-title">Email Subscribe/h4>
+                    </modal-header>
+                    <modal-body>
+                       Are you sure you want to delete this Coupon?
+                   
+                    </modal-body>
+                    <div>
+                         <input type="text" class="form-control" placeholder="Email:"  ><br/>
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="" >Subscribe</button>
+                        <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="modal.close()">Cancel</button>
+                    </div><br/>
+                    <modal-footer></modal-footer>
+                </modal>-->

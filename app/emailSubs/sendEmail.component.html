@@ -1,0 +1,28 @@
+<div class="login-page">
+
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <h2>
+                {{pageTitle}}</h2>
+            <form #MyForm="ngForm" (ngSubmit)="onSubmit($event, MyForm)">
+                <div>
+                    <label for="Receipient">Receipient:</label>
+                    <!--<input type="text" class="form-control" required placeholder="Receipient: " ng-controller="receipient"  [(ngModel)]="Email.receipient"><br/>-->
+                    <label for="Subject">Subject:</label>
+                    <input type="text" class="form-control" required placeholder="Subject: " ng-controller="subject" [(ngModel)]="Email.subject"><br/>
+
+                    <!--<input [tinyMce]="f" ngControl="valueHolder" >-->
+                    <label for="Content">Email Content:</label>
+                    <input [tinyMce]="MyForm" ngControl="content" [(ngModel)]="Email.content">
+                    <!--<textarea class="form-control" required placeholder="Email Content: " ng-controller="content" rows="8" cols="7" [(ngModel)]="Email.content"></textarea>                    <br/>-->
+                    <button type="submit" class="btn btn-primary" [disabled]="!MyForm.form.valid">Send</button>
+                    <button type="submit" class="btn btn-default" (click)="OnCancel()">Cancel</button><br/>
+                </div>
+
+                <div class="container">
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>

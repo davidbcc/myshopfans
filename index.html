@@ -1,0 +1,83 @@
+<html>
+
+<head>
+ <title>ShopFans</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="app/shared/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+  <link href="app/shared/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="app/shared/css/freelancer.css" rel="stylesheet" />
+  <link href="app/shared/css/bootstrap-submenu.css" rel="stylesheet" />
+  <link href="app/shared/css/freelancer.min.css" rel="stylesheet" />
+  <link href="app/shared/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/node_modules/angular2-toaster/toaster.css" />
+  <link href="node_modules/ng2-toastr/bundles/ng2-toastr.min.css" rel="stylesheet" />
+  <link href="node_modules/ng2-toastr/bundles/ng2-toastr.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+  />
+  <!-- 1. Load libraries -->
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="node_modules/ng2-toastr/bundles/ng2-toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+
+
+  <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+
+  <script type="text/javascript" src="/bower_components/bootstrap/js/transition.js"></script>
+  <script type="text/javascript" src="/bower_components/bootstrap/js/collapse.js"></script>
+  <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+  />
+
+  <!-- end-->
+
+
+  <!-- Required for routing -->
+  <script src="bower_components/jquery/dist/jquery.min.js" defer></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+  <script src="app/shared/js/bootstrap-submenu.min.js" defer></script>
+  <script src="node_modules/ng2-bs3-modal/bundles/ng2-bs3-modal.js"></script>
+  <!--tinymce -->
+  <script src="bower_components/tinymce/tinymce.min.js"></script>
+
+  <!-- Stripe Checkout Page -->
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script type="text/javascript">
+  Stripe.setPublishableKey('pk_test_dAArt6L3RUHZupMegxmdrYkV');
+</script>
+
+  <!-- 2. Configure SystemJS -->
+  <script src="systemjs.config.js"></script>
+  <!-- Prime NG-->
+  <link rel="stylesheet" type="text/css" href="node_modules/primeui/themes/omega/theme.css" />
+
+  <link rel="stylesheet" type="text/css" href="node_modules/primeui/primeui-ng-all.min.css" />
+  <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+</head>
+<base href="/">
+<!-- 3. Display the application -->
+
+<body>
+
+  <main-app>Loading...</main-app>
+</body>
+
+</html>

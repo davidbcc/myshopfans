@@ -1,0 +1,17 @@
+.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid {
+  border-left: 5px solid #a94442; /* red */
+}
+.full button span {
+                    background-color: limegreen;
+                    border-radius: 32px;
+                    color: black;
+                  }
+                  .partially button span {
+                    background-color: orange;
+                    border-radius: 32px;
+                    color: black;
+                  }

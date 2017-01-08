@@ -1,0 +1,28 @@
+<div class="login-page">
+	<div class="row">
+		<div class="col-lg-4 col-lg-offset-4">
+
+			<h2>Login</h2>
+			<form #LoginForm="ngForm" (ngSubmit)="OnLogin()" >
+				<div class="form-content">
+					<div class="form-group">
+						<input type="text" class="form-control" required placeholder="Email: " ng-controller="username" [(ngModel)]="User.username"><br/>
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control" required placeholder="Password:" ng-controller="password" [(ngModel)]="User.password"><br/>
+					</div>
+				</div>
+				<div>
+
+					<button type="submit" class="btn btn-primary" >Login</button>
+
+					<button type="submit" class="btn btn-default">Cancel</button><br/>
+				</div>
+				<br/>
+				<a [routerLink]="['Register']">{{registerlink}}</a>
+			</form>
+		</div>
+	</div>
+	<br/>
+</div>

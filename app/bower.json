@@ -1,0 +1,19 @@
+{
+  "name": "shopfans",
+  "description": "bower config",
+  "main": "",
+  "authors": [
+    "DB"
+  ],
+  "license": "ISC",
+  "homepage": "http://www.bit-numbers.com",
+  "private": true,
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.7",
+    "moment": "^2.14.1",
+    "ngQuill": "ngquill#^1.5.2",
+    "tinymce": "^4.4.1"
+  }
+}

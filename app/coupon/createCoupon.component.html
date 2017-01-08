@@ -1,0 +1,31 @@
+<div class="login-page">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <h2>{{pageTitle}}</h2>
+            <!--<form #CreateNewForm="ngForm">-->
+            <form #CreateNewForm="ngForm" (ngSubmit)="onSubmit($event, CreateNewForm)">
+                 <label for="title">Title:</label>
+                <input type="text" class="form-control" [(ngModel)]="NewCoupon.title" required placeholder="Title: " ng-controller="title"><br/>
+  <label for="expireddate">Expiry Date:</label>
+                <input class="form-control" [(ngModel)]="NewCoupon.expiredDate" required placeholder="Expired Date Time" type="date" ng-controller="expireddate"
+                />
+                <br/>
+                  <label for="description">Description:</label>
+                <input [tinyMce]="CreateNewForm" ngControl="description" [(ngModel)]="NewCoupon.description"><br/>
+                <!--<textarea class="form-control" [(ngModel)]="NewCoupon.description" required placeholder="Description:" ng-controller="description"
+                    rows="3" cols="5">
+                    </textarea><br/>-->
+                <br/>
+                  <label for="image">Image:</label>
+                <input type="file" class="form-control" [(ngModel)]="NewCoupon.image" ng-controller="image" (change)="fileChangeEvent($event)"><br/>
+                <div>
+<!--
+                    <button type="submit" class="btn btn-primary" [disabled]="!CreateNewForm.form.valid" (click)="OnXhrNewCouponSubmit()">Submit</button>-->
+
+                    <button type="submit" class="btn btn-primary" [disabled]="!CreateNewForm.form.valid">Submit</button>
+                    <button type="submit" class="btn btn-default" (click)="OnCancel()">Cancel</button><br/>
+                </div>
+
+                <div class="container">
+                </div>
+                <br/>

@@ -1,0 +1,46 @@
+<div class="login-page">
+    <div class="row" *ngIf='Shop'>
+        <div class="col-lg-4 col-lg-offset-4">
+            <h2>{{pageTitle}}</h2>
+            <modal-confirm></modal-confirm>
+            <form #MyUpdateCouponForm="ngForm">
+
+                <input type="hidden" class="form-control" [(ngModel)]="Shop[0].coupons[0]._id" required placeholder="Title:" ng-controller="id"><br/>
+                 <label for="title">Title:</label>
+                <input type="text" class="form-control" [(ngModel)]="Shop[0].coupons[0].title" required placeholder="Title: " ng-controller="title"><br/>
+      <label for="expirydate">Expiry Date:</label>
+                <input class="form-control" [(ngModel)]="Shop[0].coupons[0].expireddate" placeholder="Expired Date Time" type="date" ng-controller="expireddate"
+                />
+                <br/>
+                <!--<textarea class="form-control" [(ngModel)]="Shop[0].coupons[0].description" placeholder="Description:" ng-controller="description"
+                    required rows="3" cols="5">
+                    </textarea><br/>-->
+                     <label for="description">Description:</label>
+                <input [tinyMce]="MyUpdateCouponForm" ngControl="description" [(ngModel)]="Shop[0].coupons[0].description"><br/>
+                <br/>
+                      <label for="image">Image:</label>
+                <img [src]="'data:image/jpg;base64,'+Shop[0].coupons[0].image" [style.width.px]='imageWidth' [style.margin.px]='imageMargin'
+                />
+                <input type="file" class="form-control" ng-controller="image" (change)="fileChangeEvent($event)"><br/>
+                <div>
+
+                    <button type="submit" class="btn btn-primary" (click)="OnXhrUpdateCouponSubmit($event,MyUpdateCouponForm)">Update</button>
+
+                    <button type="submit" class="btn btn-default" (click)="OnCancel()">Cancel</button>
+                    <button type="submit" class="btn btn-warning" (click)="modal.open()">Delete</button><br/>
+ 
+       </div>
+            <div class="container">
+            </div>
+            <br/>
+                <modal #modal>
+               
+                       <h4>Are you sure you want to delete this Coupon?</h4><br/>
+                   
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="ModelTest()" >Remove</button>
+                        <button type="submit" class="btn btn-default" data-dismiss="modal" (click)="modal.close()">Cancel</button>
+                    </div><br/>
+                     
+                    <modal-footer></modal-footer>
+                </modal>

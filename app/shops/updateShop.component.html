@@ -1,0 +1,49 @@
+<div class="login-page">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4" *ngIf="Shop">
+            <h2>
+
+                {{pageTitle}}</h2>
+
+            <form #UpdateForm="ngForm">
+                <div>
+                    <label for="shopname">Shop Name:</label>
+                    <input type="text" class="form-control" required placeholder="Shop Name: " ng-controller="shopname" [(ngModel)]="Shop.shopname"><br/>
+                    <label for="phone">Phone:</label>
+                    <!--<input type="text" class="form-control" required placeholder="Product Name: " ng-controller="productname" [(ngModel)]="Shop.productname">                    <br/>-->
+                    <input type="text" class="form-control" required placeholder="Phone Number: " ng-controller="phone" [(ngModel)]="Shop.phone">                    <br/>
+                    <label for="address">Address:</label>
+                    <textarea class="form-control" required placeholder="Address: " ng-controller="address" [(ngModel)]="Shop.address"></textarea>                    <br/>
+                    <label for="description">Description:</label>
+                    <input [tinyMce]="UpdateForm" ngControl="description" [(ngModel)]="Shop.description"><br/>
+                                     <label for="image">Image File(Max 3 images):</label><br/>
+                           <TABLE BORDER=2 CELLPADDING=4>    
+                    <td *ngFor='#image of Shop.images'>
+                      
+                        <img [src]="'data:image/jpg;base64,'+image" [style.width.px]='imageWidth' [style.margin.px]='imageMargin' border='5'/><br/>
+
+                    </td>
+                           </TABLE>
+                           <br/>
+                    <!--
+                    <label for="image">Image:</label><br/>
+                    <img [src]="'data:image/jpg;base64,'+Shop.images[0]" [style.width.px]='imageWidth' [style.margin.px]='imageMargin' />-->
+
+                    <input type="file" class="form-control" ng-controller="image" (change)="fileChangeEvent($event)" multiple><br/>
+                    <button type="submit" class="btn btn-primary" (click)="OnXhrSubmit($event, UpdateForm)">Submit</button>
+
+                    <button type="submit" class="btn btn-default" (click)="OnCancel()">Cancel</button>
+
+
+
+                </div>
+                <div>
+
+                </div>
+                <div class="container">
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>

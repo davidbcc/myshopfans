@@ -1,0 +1,36 @@
+<div class="login-page">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <h2>
+
+                {{pageTitle}}</h2>
+            <form #MyForm="ngForm" (ngSubmit)="onSubmit($event, MyForm)">
+                <!--<form #CreateNewForm="ngForm" >-->
+                <label for="shopname">Shop Name:</label>
+                <input type="text" class="form-control" required placeholder="Shop Name: " ng-controller="shopname" [(ngModel)]="NewShop.shopname"><br/>
+
+                <!--<input type="text" class="form-control" required placeholder="Product Name: " ng-controller="productname" [(ngModel)]="NewShop.productname">                    <br/>-->
+                <label for="phone">Phone Number:</label>
+                <input type="text" class="form-control" required placeholder="Phone Number: " ng-controller="phone" [(ngModel)]="NewShop.phone">                <br/>
+                <label for="address">Address:</label>
+                <textarea class="form-control" required placeholder="Address: " ng-controller="address" [(ngModel)]="NewShop.address"></textarea>                <br/>
+                <label for="description">Description:</label>
+                <!--<textarea class="form-control" required placeholder="Description: " ng-controller="description" [(ngModel)]="NewShop.description"></textarea><br/>-->
+
+                <input [tinyMce]="MyForm" ngControl="description" [(ngModel)]="NewShop.description"><br/>
+                <div>
+                    <label for="image">Image File(Max 3 images):</label>
+                    <input type="file" class="form-control" ng-controller="images" (change)="fileChangeEvent($event)" [(ngModel)]="NewShop.images" multiple><br/>
+                    <!--<input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>-->
+                    <!--<button type="submit" class="btn btn-primary" [disabled]="!MyForm.form.valid" (click)="OnXhrSubmit()">Submit</button>-->
+                    <button type="submit" class="btn btn-primary" [disabled]="!MyForm.form.valid">Submit</button>
+                    <button type="submit" class="btn btn-default" (click)="OnCancel()">Cancel</button><br/>
+                </div>
+
+                <div class="container">
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>

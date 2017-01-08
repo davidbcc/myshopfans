@@ -1,0 +1,46 @@
+<div class="login-page">
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <h2>
+                {{pageTitle}}</h2>
+            <form #MyForm="ngForm" (ngSubmit)="onSubmit()">
+                <!--<form #MyForm="ngForm">-->
+                <label for="firstname">First Name:</label>
+                <input type="text" class="form-control" required placeholder="First Name: " ng-controller="firstname" [(ngModel)]="User.firstname"><br/>
+                <label for="last name">Last Name(名):</label>
+                <input type="text" class="form-control" required placeholder="Last Name: " ng-controller="lastname" [(ngModel)]="User.lastname">                <br/>
+                <label for="username">UserName(ユーザー名):</label>
+                <input type="text" class="form-control" required placeholder="Username (Email) : " ng-controller="username" [(ngModel)]="User.username">                <br/>
+                <label for="password">Password(パスワード):</label>
+                <input type="password" class="form-control" required placeholder="Password: " ng-controller="password" [(ngModel)]="User.password">                <br/>
+                <label for="displayname">Display Name(表示名):</label>
+                <input type="text" class="form-control" required placeholder="Displayname: " ng-controller="displayname" [(ngModel)]="User.displayname">                <br/>
+                <label for="userurl">Personal URL:</label>
+                <input type="text" class="form-control" placeholder="URL: " ng-controller="userurl" [(ngModel)]="User.url">                <br/>
+                <label for="phone">Phone(電話番号):</label>
+                <input type="text" class="form-control" required placeholder="Phone: " ng-controller="phone" [(ngModel)]="User.phone">                <br/>
+                <label for="address">Address(住所):</label>
+                <textarea class="form-control" required placeholder="Address: " ng-controller="address" [(ngModel)]="User.address"></textarea>                <br/>
+                <!--<label for="role">User Role:</label>
+                <select class="form-control">
+<option >Admin</option>
+<option >User</option>
+</select>-->
+
+
+<br/>
+
+                <div>
+
+                    <button type="submit" class="btn btn-primary">Register</button>
+
+                    <button type="submit" class="btn btn-default">Cancel</button><br/>
+                </div>
+
+                <div class="container">
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
